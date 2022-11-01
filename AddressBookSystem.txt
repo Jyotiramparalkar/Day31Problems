@@ -1,3 +1,44 @@
 /*UC1*/
 create database address_book_system;
 use address_book_system;
+
+/*UC2*/
+create table address_book(
+	firstname varchar(20),
+    lastname varchar(20),
+	address varchar(50),
+    city varchar(20),
+    state varchar(20),
+    zip char(6),
+    phonenumber varchar(10),
+    emailId varchar(30),
+    primary key(firstname)
+);
+
+/*UC3*/
+insert into address_book values('Jyotiram','Paralkar','Morewadi','Ambajogai','Maharashtra',431517,9665721165,'paralkarjyotiram@gmail.com');
+insert into address_book values('Jayshree','Paralkar','Morewadi','Ambajogai','Maharashtra',431517,9665721165,'paralkarjyotiram@gmail.com');
+insert into address_book values('Jyoti','Paralkar','Morewadi','Ambajogai','Maharashtra',431517,9665721165,'paralkarjyoti@gmail.com');
+insert into address_book values('Vishwanath','Paralkar','Morewadi','Ambajogai','Maharashtra',431517,9665721165,'paralkarjyotiram@gmail.com');
+select * from address_book;
+
+/*UC4*/
+update address_book set state = 'Hydrabad' where firstname = 'Jyotiram';
+
+/*UC5*/
+delete from address_book where firstname = 'Jyoti';
+
+/*UC6*/
+select * from address_book where city = 'Ambajogai';
+select * from address_book where state = 'Maharashtra';
+
+/*UC8*/
+select * from address_book  where city = 'Ambajogai' order by firstname Desc;
+
+
+/*UC7*/
+insert into address_book values('Asdf','QQQWW','Kesha','Mumbai','Maharashtra','410010',9876543210,'jack123@gmail.com');
+select city,count(*) from address_book group by city;
+select state,count(*) from address_book group by state;
+
+
